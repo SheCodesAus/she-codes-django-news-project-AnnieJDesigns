@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
 <div id="story-wrapper">
     <h2>{{ story.title }}</h2>
     <h4>{{ story.author }}</h4>
@@ -6,3 +10,5 @@
         {{ story.content|linebreaks }}
     </div>
 </div>
+{% endblock %}
+
