@@ -1,8 +1,13 @@
+from django.contrib.auth import get_user_model
+from django.views import generic
 from django.views import generic
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import NewsStory
 from .forms import StoryForm
 
+
+User = get_user_model
 class IndexView(generic.ListView):
     template_name = 'news/index.html'
 
@@ -31,3 +36,26 @@ class AddStoryView(generic.CreateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
+# class StoryEditView(generic.UpdateView):
+#     model = NewsStory
+#     form_class = StoryForm
+#     fields = {'title', 'pub_date', 'content', 'image_field'}
+    
+#     def get_success_url(self) -> str:
+#         return reverse_lazy('news:story', kwargs={"pk":self.kwargs["pk"]})
+
+#     def get_queryset(self):
+#         qs = super().get_queryset()
+#         if not self.request.user.is_authenticated:
+#             raise qs.model.DoesNotExist
+#         qs = qs.filter(author=self.request.user)
+#         return qs
+
+# class StoryDeleteView(LoginRequiredMixin.generic.DeleteView):
+#     models = NewsStory
+#     success_url = reverse_lazy('news:index')
+
+#     def get_queryset(self):
+#         """filter to only allow delete of own stories"""
+#         qs = super().get_queryset()
+#         return qs.filter(author=self.request.user)

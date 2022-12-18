@@ -4,6 +4,10 @@ body {
     background-color: rgb(240, 239, 239);
 }
 
+body {
+    margin: 0 20px;
+}
+
 header {
     display: flex;
     align-items: center;
@@ -51,4 +55,38 @@ a {
 
 a, p {
     font-family: monospace;
+}
+
+.create_story_form form p {
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+}
+
+
+.create_story_form form input, .create_story_form form textarea{
+    width: 500px;
+}
+
+.create_story_form form > input {
+    margin-left: 600px;
+    width: 100px;
+    padding: 10px 20px;
+    border-radius: 100px;
+    border: black 1px solid;
+}
+
+button {
+    border: black 1px solid;
+    border-radius: 30px;
+    padding: 3px 5px;
+}
+
+button:hover {
+    background-color: #000;
+    color: white;
+}
+
+button:hover a {
+    color: white;
 }

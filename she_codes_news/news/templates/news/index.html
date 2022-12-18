@@ -7,9 +7,10 @@
 
    {% block content %}
    
-   <h2>Latest News</h2>
 
-   <h3><a href="{% url 'news:newStory' %}">Add a new story</a></h3>
+   <button type="button"><h3><a href="{% url 'news:newStory' %}">Add a new story</a></h3></button>
+   
+   <h2>Latest News</h2>
 
     <div id="latest-stories">
         {% if latest_stories %}
@@ -20,6 +21,8 @@
             <p>No stories are available.</p>
         {% endif %}
     </div>
+
+    <h2>All News</h2>
 
     <div id="all-stories">
         {% if latest_stories %}
