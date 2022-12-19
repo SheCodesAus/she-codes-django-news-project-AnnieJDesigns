@@ -6,9 +6,12 @@
     {% endblock %}
 
    {% block content %}
-   
 
-   <button type="button"><h3><a href="{% url 'news:newStory' %}">Add a new story</a></h3></button>
+   <br>
+   {% if request.user.is_authenticated %}
+   <button type="button"><p><a href="{% url 'news:newStory' %}">Add a new story</a></p></button>
+   {% else %}
+   {% endif %}
    
    <h2>Latest News</h2>
 

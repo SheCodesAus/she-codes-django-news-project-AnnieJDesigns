@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
+{% endblock %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+<h2>Profile</h2>
+{% else %}
+<h3>Please login</h3>
+{% endif %}
+
+{% endblock %}
