@@ -16,11 +16,6 @@ class StoryForm(ModelForm):
             'content': 'Content',
             'image': 'Image URL',
         }
-        widgets = {
-            'title': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Enter title up to 10 words'}),
-            
-           
-        }
     
 ORDER_CHOICE = {
     ('','newest first'), 

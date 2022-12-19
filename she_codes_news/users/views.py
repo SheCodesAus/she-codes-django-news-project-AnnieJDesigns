@@ -10,8 +10,6 @@ from django.views import generic
 from .models import CustomUser
 from .forms import CustomUserCreationForm
 
-
-
 class CreateAccountView(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy("login")
@@ -23,7 +21,8 @@ class AccountView(generic.DetailView):
     context_object_name = 'user'
 
 
-   
+
+
 
     
    
